@@ -34,6 +34,7 @@ export const useLocalMedia =(): LocalMediaState =>{
                     setError("Failed to connect camera/microphone")
                 }
             }
+            
         };
         startMedia();
         return() =>{
@@ -57,7 +58,7 @@ export const useLocalMedia =(): LocalMediaState =>{
         videoTracks.forEach((track)=>{
             track.enabled= !track.enabled;
         });
-        setIsAudioEnabled((prev) =>!prev);
+        setIsVideoEnabled((prev) => !prev);
     };
     return {
         stream,
